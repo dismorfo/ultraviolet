@@ -1,2 +1,470 @@
 @import "invenio_app_rdm/theme";
 @import "variables";
+
+@fuchsia: #9f1daa;
+@blue: #28619e;
+
+
+/*   copied from invenio_app_rdm/theme/assets/semantic-ui/less/invenio_app_rdm/theme.less */
+html,
+body {
+  color: #000;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.outer-navbar {
+  background-image: @navbar_background_image;
+  background-color: @navbar_background_color;
+  border-color: transparent;
+
+  #invenio-nav {
+    background: transparent;
+  }
+
+  #frontpage-search-bar {
+    background: transparent;
+    .search-bar {
+      width: 50%;
+      padding: 1rem;
+    }
+  }
+
+  a {
+    color: #dbeaff;
+  }
+}
+
+.item.right-menu {
+  line-height: 44px !important;
+}
+
+.no-dots-list {
+  list-style-type: none;
+  margin-block-start: unset;
+  margin-block-end: unset;
+}
+
+.centered {
+  text-align: center;
+}
+
+.titlecase {
+  text-transform: capitalize;
+}
+
+// Frontpage
+.section-content-dark-bg,
+.section-content-white-bg,
+.section-content-light-bg {
+  padding-top: calc(30px);
+  padding-bottom: calc(2 * 30px);
+
+  &:first-of-type {
+    padding-top: 10px;
+  }
+}
+
+.section-content-dark-bg {
+  padding-top: calc(30px) !important;
+  padding-bottom: calc(2 * 30px);
+}
+
+.section-content-white-bg {
+  padding-top: calc(40px) !important;
+  padding-bottom: calc(2 * 30px);
+}
+
+.section-content-light-bg {
+  padding-top: calc(60px) !important;
+  padding-bottom: calc(2 * 30px);
+
+  &:last-of-type {
+    // NOTE: Fixes spacing between content and footer in the frontpage
+    // TODO: Fix body content padding/margins in general
+    margin-bottom: -1rem;
+  }
+}
+
+.section-content-white-bg a,
+.section-content-light-bg a,
+.hp-blog-section a {
+  text-decoration: none;
+  color: #0377cdb5;
+  font-weight: 600;
+}
+
+.section-content-white-bg a:hover,
+.section-content-white-bg a:focus,
+.section-content-light-bg a:hover,
+.section-content-light-bg a:focus,
+.hp-blog-section a:hover,
+.hp-blog-section a:focus {
+  color: @blue;
+}
+
+.section-content-white-bg,
+.section-content-light-bg {
+  color: #333;
+  width: 100%;
+  text-align: justify;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.section-content-light-bg {
+  background-color: rgba(173, 206, 224, 0.52);
+}
+
+.section-content-white-bg {
+  background-color: #fff;
+}
+
+.section-content-white-bg h6,
+.section-content-light-bg h6 {
+  font-weight: 300;
+  font-size: 1.4em;
+  padding-bottom: 10px;
+  color: @blue;
+}
+
+.section-title {
+  -webkit-font-smoothing: antialiased;
+  font-size: 2.5em;
+  width: 100%;
+  text-align: center;
+  display: block;
+  color: @blue;
+  margin-bottom: 45px;
+  font-weight: 500;
+}
+
+.section-subtitle {
+  color: @blue !important;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.invenio-rdm-project-goals {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: auto;
+
+  .rdm-goal {
+    width: 33.33333333%;
+    padding: 1em;
+  }
+}
+
+.invenio-rdm-project-collaborators {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: auto;
+  width: 100%;
+
+  .rdm-collaborators {
+    width: 25%;
+    padding: 1em;
+  }
+}
+
+.get-started-section > .section-title {
+  font-size: 2.65em;
+}
+
+.collaborators-logo {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+  max-width: 100% !important;
+}
+
+@media only screen and (max-width: 767px) {
+  .invenio-rdm-project-goals {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-top: 1em;
+
+    .rdm-goal {
+      width: 100%;
+    }
+  }
+  .outer-navbar {
+    #frontpage-search-bar {
+      .ui.container.grid {
+        width: 100% !important;
+      }
+      .search-bar {
+        width: 90%;
+      }
+    }
+  }
+  .invenio-rdm-project-collaborators {
+    flex-direction: column !important;
+    align-items: center !important;
+    padding-top: 1em;
+
+    .rdm-collaborators {
+      width: 100%;
+    }
+  }
+}
+
+.features-section img {
+  max-height: 60px;
+  max-width: 100%;
+}
+.features-section-row {
+  padding-bottom: 30px;
+}
+
+.brought-to-you-section img,
+.trusted-by-section img {
+  max-height: 150px;
+  max-width: 250px;
+  margin: 20px;
+  padding: 20px;
+}
+
+// Search page
+.record-elem .record-title {
+  color: @blue;
+}
+
+.record-elem .record-description {
+  color: #000000;
+}
+
+.btn-primary {
+  background-color: @blue;
+  border-color: @blue;
+}
+
+.panel-free-title {
+  color: @blue;
+}
+
+// Log-in and sign-up
+.cover-page {
+  background-image: @navbar_background_image;
+  background-color: @navbar_background_color;
+  border-color: transparent;
+}
+
+.theme.header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+// Deposits page
+
+.item.deposits-list-item {
+  .ui.grid .checkbox-column {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      padding-left: 0.5em;
+      padding-bottom: 20px;
+    }
+  }
+
+  div.status-icon {
+    margin-right: 10px;
+  }
+
+  .actions > a,
+  .stats > span {
+    padding-right: 0.5em;
+  }
+}
+
+.ui.items > .item .extra.labels-actions {
+  margin-bottom: 0.75em;
+}
+
+.ui.label.access-status {
+  color: #ffffff;
+
+  &.open {
+    background-color: @accessRightOpen;
+  }
+  &.restricted {
+    background-color: @accessRightRestricted;
+  }
+  &.embargoed {
+    background-color: @accessRightEmbargoed;
+  }
+  &.metadata-only {
+    background-color: @accessRightMetadataOnly;
+  }
+}
+
+.ui.card.borderless-facet {
+  box-shadow: none;
+  .content {
+    border-top: none;
+    .header {
+      font-size: 1.1em !important;
+    }
+  }
+}
+
+.content.facet-content.active {
+  padding-left: 21px !important;
+}
+
+.facet-subtitle {
+  padding-left: 20px !important;
+}
+
+.result-options {
+  height: 66px;
+}
+
+.inline-orcid {
+  height: @font-size-base;
+  vertical-align: middle;
+  padding-right: 3px;
+}
+
+.ui.grid {
+  .row.file-upload-area-row {
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+    .ui.basic.very.padded.segment.file-upload-area {
+      border: 2px dashed #999999;
+      border-radius: 5px;
+      background: #eeeeee none;
+      margin-top: 20px;
+
+      &.no-files {
+        margin: 0px;
+      }
+    }
+  }
+
+  .row.file-upload-note-row {
+    padding-top: 5px;
+  }
+
+  .row.file-import-note-row {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+.ui.table {
+  .ui.blue.medium.file-upload-progress {
+    &.progress,
+    &.success {
+      &.active,
+      &.disabled {
+        margin-bottom: 0px;
+        &.error {
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
+
+  .file-table-row {
+    .file-table-header-cell {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .file-table-cell {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      &.file-upload-pending {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.ui.modal {
+  .header.deposit-modal-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.ui.menu {
+  .active.item.license-menu-item-active {
+    border-color: #2185d0;
+    background-color: #2185d0;
+    color: white;
+
+    &:hover {
+      border-color: #0d71bb;
+      background-color: #0d71bb;
+      color: white;
+    }
+  }
+}
+
+/*  end copied from theme.less */
+/*  **********************  */
+/*  **********************  */
+/*  **********************  */
+
+
+.outer-navbar {
+  background-image: radial-gradient(farthest-corner at -40% -10%, #57068C 50%, #d200f0);
+  background-image:  radial-gradient(farthest-corner at -10% -0%, #57068C 30%, #d200f0);
+  background-image:  radial-gradient(farthest-corner at 50% 50%, #d200f0, #57068C);
+  height: 49vh;
+}
+
+
+.fp-section-1 {
+  flex: 1 0 auto;
+  background-color:#220337b3;
+  color: white;
+  margin-top: -1.2em;
+  margin-bottom: -1.2em;
+  padding-bottom: 4em;
+  background-color: #3c0064;
+  .container {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+
+.fp-section-1-inner-50 {
+  width: 50%;
+}
+.uv-frontpage-info {
+  font-weight:200;
+ 
+  h2 {
+    font-weight:200;
+  }
+}
+.theme.header {
+  box-shadow: 0 2px 5px rgba(87, 6, 140, 0.45);
+}
+.section-content-white-bg,
+.section-content-light-bg {
+  // color: #411e57c7;
+}
+body {
+  // body to clobber other !importants
+  .ui.blue.labels .label,
+  .ui.blue.label {
+    background-color: @blue !important;
+    border-color: @blue !important;
+    color: #ffffff !important;
+  }
+  a {
+    color: @blue;
+  }
+}
+.footer-top {
+  display: none !important;
+}
