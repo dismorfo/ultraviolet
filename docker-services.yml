@@ -43,6 +43,8 @@ services:
   mq:
     image: rabbitmq:3-management
     restart: "unless-stopped"
+    volumes:
+      - ./app_data/db:/var/lib/postgresql/data
     ports:
       - "15672:15672"
       - "5672:5672"
