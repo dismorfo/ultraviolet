@@ -20,6 +20,7 @@ uwsgi = ">=2.0"
 uwsgitop = ">=0.11"
 uwsgi-tools = ">=1.1.1"
 pytest = "*"
+invenio-previewer = {git = "https://github.com/nyudlts/invenio-previewer"}
 
 [requires]
 python_version = "3.7"
